@@ -1,0 +1,69 @@
+table.key_official:hover {
+  transform: scale(1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.smicon > img {
+  width:80%!important;
+  filter:grayscale(95%);
+}
+
+.smicon > img:hover {
+  filter:grayscale(0%);
+}
+
+
+.attached_agency:hover {
+  filter: none !important;
+  -webkit-filter: grayscale(0%) !important;
+  -moz-transition: all 0.5s ease-in;
+}
+
+#main-nav {
+    position: fixed !important;
+    width: 100% !important;
+    z-index: 99999 !important;
+}
+
+#masthead {
+  padding-top: 50px;
+}
+
+#logo div {
+    animation: fadein 5s;
+    -moz-animation: fadein 5s; /* Firefox */
+    -webkit-animation: fadein 5s; /* Safari and Chrome */
+    -o-animation: fadein 5s; /* Opera */
+}
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+	<name>SW Twitter Feeds Sidebar</name>
+	<author>Muhammad Riduan</author>
+	<creationDate>August 2014</creationDate>
+	<copyright>Copyright (C)2014 Social Widgets</copyright>
+	<license>GNU General Public License version 2 or later</license>
+	<authorEmail>admin@socialwidgets.net</authorEmail>
+	<authorUrl>www.socialwidgets.net</authorUrl>
+	<version>1.0</version>
+	<description>
+	<![CDATA[
+		<style type="text/css">
+			span.readonly { padding: 10px; font-family: Arial; font-size:13px !important; font-weight: normal !important; text-align: justify; color: #4d4d4d; line-height: 24px; }
+			span.readonly h1 { clear:both; font-family: Georgia, sans-serif; font-size:38px; margin:30px 20px 23px; padding:0px 0px 24px 10px; color:#333; border-bottom: 1px solid #eee; font-weight: normal; }
+			span.readonly p { margin: 0 26px 10px }
+			span.readonly p a { color: #2F4C6D }
+			span.readonly p.homepage { margin-top: 30px }
+			span.readonly p.license { border-top: 1px solid #eee; font-size: 11px; margin: 30px 26px 0; padding: 6px 0; }
+		</style>	
+		<span class="readonly"><h1>SW Twitter Feeds Sidebar <small>ver. 1.0</small></h1><p>
+		<p>Thanks for installing SW Twitter Feeds Sidebar - This is a light version.</p>
+		<p><strong>To buy pro version - click here ->> <a href="#" target="_blank" title="Buy Now">Buy Now</a></strong></p>
+		<p class="license">SW Twitter Feeds Sidebar is released under the <a href="http://www.gnu.org/licenses/gpl-2.0.html" target="_blank">GNU/GPL v2 license.</a></p></span></span>
+	]]>
+	</description>
+	<files>
+		<folder>assets</folder>
+		<folder>tmpl</folder>
+		<filename module="mod_sw_twitter_feeds_sidebar">mod_sw_twitter_feeds_sidebar.php</filename>
+		<filename>index.html</filename>
+		<filename>mod_sw_twitter_feeds_sidebar.xml</filename>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field 
+					name="margintop"
+					type="text"
+					default="150"
+					label="Margin Top" 
+					description="Margin Top Here" />
+				<field
+					name="tw_username"
+					type="text"
+					default="google"
+					label="Twitter Username"
+					description="Twitter Username here - example - twitter.com/google - then username is - google" />
+				
+				<field
+					name="widget_theme"
+					class="btn-group"
+					type="radio"
+					default="light"
+					label="Widget Theme"
+					description="Two Widget Theme Available - Choose the one you prefer">
+					<option value="light">Light</option>
+					<option value="dark">Dark</option>
+				</field>
+				<field 
+					name="twidth"
+					type="text"
+					default="290"
+					label="Width" 
+					description="Width of your module in pixel" />
+				<field 
+					name="theight"
+					type="text"
+					default="350"
+					label="Height"
+					description="Height of your module in pixel" />
+				<field
+					name="loadjquery"
+					class="btn-group"
+					type="radio"
+					default="0"
+					label="Load jQuery"
+					description="You can disable it - if your site already loading jQuery from some other source">
+					<option value="0">Disable</option>
+					<option value="1">Enable</option>
+				</field>
+			</fieldset>
+
+			<fieldset name="advanced">
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					default=""
+					label="Module Suffix"
+					description="Module CSS Class Suffix here" />				
+			</fieldset>
+		</fields>
+	</config>
+</extension>

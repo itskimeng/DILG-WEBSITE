@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+	<fieldset name="image_modal" class="image-subform">
+		<field name="ju_image" type="media" default="" label="Image" description="Browse for image" />
+		<field name="ju_target_url" type="text" default="" label="Link" description="Add link" />
+	</fieldset>
+</form>

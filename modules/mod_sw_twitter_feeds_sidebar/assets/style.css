@@ -1,0 +1,29 @@
+#sw_twitter_feeds_sidebar {
+	position: relative;
+}
+#tbox1 {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border:5px solid #1da1f2;
+	background-color: #fff;
+	position: fixed;
+}
+#tbox2 {
+	overflow: hidden;
+	text-align: left;
+}
+#tbox1 img {
+	position: absolute; 
+	top: 0px; 
+	cursor: pointer;
+	border: 0;
+	z-index: 10000;
+}
+#tbox1 iframe {
+	border:0px;
+	overflow: hidden; 
+	position: absolute;
+	width:100%;
+	height: 100%;
+}

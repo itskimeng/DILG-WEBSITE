@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1" client="site" method="upgrade">
+	<name>MOD_NXYTB_TITLE</name>
+	<author>Rensch Marco</author>
+	<creationDate>January 2017</creationDate>
+	<copyright>Copyright (C) 2016 - 2018</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>admin@nx-designs.ch</authorEmail>
+	<authorUrl>www.nx-designs.ch</authorUrl>
+	<version>1.3.2</version>
+	<description>MOD_NXYTB_XML_DESCRIPTION</description>
+	<files>
+		<filename module="mod_nxyoutubebox">mod_nxyoutubebox.php</filename>
+		<folder>tmpl</folder>
+		<folder>models</folder>
+		<folder>language</folder>
+		<filename>helper.php</filename>
+	</files>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.mod_nxyoutubebox.ini</language>
+		<language tag="en-GB">en-GB/en-GB.mod_nxyoutubebox.sys.ini</language>
+		<language tag="de-DE">de-DE/de-DE.mod_nxyoutubebox.ini</language>
+		<language tag="de-DE">de-DE/de-DE.mod_nxyoutubebox.sys.ini</language>
+		<language tag="de-CH">de-DE/de-DE.mod_nxyoutubebox.ini</language>
+		<language tag="de-CH">de-DE/de-DE.mod_nxyoutubebox.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic" addfieldpath="/modules/mod_nxyoutubebox/models/fields">
+				<field type="spacer" name="sourcesettingsspacer" label="MOD_NXYTB_YTMODE_TIT" />
+				<field name="cookiemode" type="list" default="http://www.youtube-nocookie.com" label="MOD_NXYTB_YTMODE_LBL" description="MOD_NXYTB_YTMODE_DESC">
+					<option value="http://www.youtube.com">Default Mode</option>
+				  	<option value="http://www.youtube-nocookie.com">No-Cookie Mode</option>
+				</field>
+				<field type="spacer" name="sourcesettingsspacer" label="MOD_NXYTB_SOPTIONS_TIT" />
+				<field name="sourcetype" type="list" default="0" label="MOD_NXYTB_PLAYERMODE_LBL" description="MOD_NXYTB_PLAYERMODE_DESC">
+					<option value="0">Single Video</option>
+				  	<option value="1">Playlist</option>
+				</field>
+				<field name="playlisttype" type="list" showon="sourcetype:1" default="playlist" label="MOD_NXYTB_PLTYPE_LBL" description="MOD_NXYTB_PLTYPE_DESC">
+					<option value="playlist">MOD_NXYTB_PLTYPE_PLAYLIST</option>
+				  	<option value="user_uploads">MOD_NXYTB_PLTYPE_USER</option>
+				  	<option value="search">MOD_NXYTB_PLTYPE_QUERY</option>
+				</field>
+				
+				<field name="id" type="text" label="MOD_NXYTB_VID_LBL" description="MOD_NXYTB_VID_DESC" default="" hint="OBkty9qjVsw"/>
+				<field name="videoInfo" type="nxVideoinfo" label="Video" />
+				
+				<field type="spacer" name="playersettingsspacer" label="MOD_NXYTB_POPTIONS_TIT" />
+				<field name="fullscreen" type="radio" default="1" label="MOD_NXYTB_FS_LBL" description="MOD_NXYTB_FS_DESC" class="btn-group btn-group-yesno">
+  					<option value="1">JYES</option>
+  					<option value="0">JNO</option>
+				</field>
+				<field name="autoplay" type="radio" default="0" label="MOD_NXYTB_AP_LBL" description="MOD_NXYTB_AP_DESC" class="btn-group btn-group-yesno">
+  					<option value="1">JYES</option>
+  					<option value="0">JNO</option>
+				</field>
+				<field name="loop" type="radio" default="1" label="MOD_NXYTB_LOOP_LBL" description="MOD_NXYTB_LOOP_DESC" class="btn-group btn-group-yesno">
+  					<option value="1">JYES</option>
+  					<option value="0">JNO</option>
+				</field>
+				<field name="mute" type="radio" default="0" label="MOD_NXYTB_MUTE_LBL" description="MOD_NXYTB_MUTE_DESC" class="btn-group btn-group-yesno">
+  					<option value="1">JYES</option>
+  					<option value="0">JNO</option>
+				</field>
+				<field name="volume" type="nxVolume" default="50" label="MOD_NXYTB_VOL_LBL" description="MOD_NXYTB_VOL_DESC" first="1" last="100" step="1" />
+				<field name="controls" type="radio" default="1" label="MOD_NXYTB_CTRL_LBL" description="MOD_NXYTB_CTRL_DESC" class="btn-group btn-group-yesno">
+  					<option value="1">JYES</option>
+  					<option value="0">JNO</option>
+				</field>
+				<field name="related" type="radio" default="0" label="MOD_NXYTB_REL_LBL" description="MOD_NXYTB_REL_DESC" class="btn-group btn-group-yesno">
+  					<option value="1">JYES</option>
+  					<option value="0">JNO</option>
+				</field>
+				<field name="disablekb" type="radio" default="0" label="MOD_NXYTB_DKB_LBL" description="MOD_NXYTB_DKB_DESC" class="btn-group btn-group-yesno">
+  					<option value="1">JYES</option>
+  					<option value="0">JNO</option>
+				</field>
+				<field name="branding" type="radio" default="0" label="MOD_NXYTB_BRAND_LBL" description="MOD_NXYTB_BRAND_DESC" class="btn-group btn-group-yesno">
+  					<option value="1">JYES</option>
+  					<option value="0">JNO</option>
+				</field>
+				<field name="iv_load_policy" type="radio" default="0" label="MOD_NXYTB_ANNO_LBL" description="MOD_NXYTB_ANNO_DESC" class="btn-group btn-group-yesno">
+  					<option value="1">JYES</option>
+  					<option value="0">JNO</option>
+				</field>
+				<field name="showinfo" type="radio" default="0" label="MOD_NXYTB_SINFO_LBL" description="MOD_NXYTB_SINFO_DESC" class="btn-group btn-group-yesno">
+  					<option value="1">JYES</option>
+  					<option value="0">JNO</option>
+				</field>
+				<field name="starttime" type="text" label="MOD_NXYTB_STIME_LBL" description="MOD_NXYTB_STIME_DESC" default="0" filter="integer"/>
+				<field name="playsinline" type="radio" default="1" label="MOD_NXYTB_INLINE_LBL" description="MOD_NXYTB_INLINE_DESC" class="btn-group btn-group-yesno">
+  					<option value="1">JYES</option>
+  					<option value="0">JNO</option>
+				</field>
+				
+			</fieldset>
+			<fieldset name="visual" addfieldpath="/modules/mod_nx-youtubebox/models/fields">
+				<field type="spacer" name="visualsettingsspacer" label="MOD_NXYTB_VOPTIONS_TIT" />
+				<field type="spacer" name="visualsettingsintro" label="MOD_NXYTB_VOPTIONS_DESC" />
+				<field name="styletype" type="list" default="0" label="MOD_NXYTB_STYLETYPE_LBL" description="MOD_NXYTB_STYLETYPE_DESC">
+					<option value="0">MOD_NXYTB_STYLETYPE_DEFAULT</option>
+				  	<option value="1">MOD_NXYTB_STYLETYPE_HEADER</option>
+				</field>
+<!-- #### Headermode Settings -->
+				<field name="hmodeheight" showon="styletype:1" type="text" label="MOD_NXYTB_HEADERMODEHEIGHT_LBL" description="MOD_NXYTB_HEADERMODEHEIGHT_DESC" default="50" hint="50"/>
+				<field name="verticalalignement" showon="styletype:1" type="text" label="MOD_NXYTB_HEADERMODEVALIGN_LBL" description="MOD_NXYTB_HEADERMODEVALIGN_DESC" default="-25" hint="-25"/>
+				
+				<field name="cornerradius" showon="styletype:0" type="text" default="4px" label="MOD_NXYTB_CORNERRAD_LBL" description="MOD_NXYTB_CORNERRAD_DESC" hint="6px" />
+<!-- #### Rotator Settings -->
+				<field name="rotation" showon="styletype:0" type="nxRotate" label="MOD_NXYTB_ROTATOR_LBL" description="MOD_NXYTB_ROTATOR_DESC" default="90" min="0" max="180" />
+			
+<!-- #### Outer Shadow Settings -->
+				<field type="spacer" name="outershadowsettingsspacer" label="MOD_NXYTB_OUTERSHADOW_TIT" />
+				<field name="enableoutershadow" type="radio" default="0" label="MOD_NXYTB_USEOUTERSHADOW_LBL" description="MOD_NXYTB_USEOUTERSHADOW_DESC" class="btn-group btn-group-yesno">
+  					<option value="1">JYES</option>
+  					<option value="0">JNO</option>
+				</field>
+				<field name="outershadowcolor" showon="enableoutershadow:1" type="nxColor" format="rgba" default="rgba(100,100,100, 0.7)" label="MOD_NXYTB_OUTERSHADOWCOLOR_LBL" description="MOD_NXYTB_OUTERSHADOWCOLOR_DESC" />
+				<field name="outershadowhoffset" showon="enableoutershadow:1" type="text" default="4" label="MOD_NXYTB_OUTERSHADOWHOFFSET_LBL" description="MOD_NXYTB_OUTERSHADOWHOFFSET_DESC" hint="Value in Pixels" filter="integer"/>
+				<field name="outershadowvoffset" showon="enableoutershadow:1" type="text" default="4" label="MOD_NXYTB_OUTERSHADOWVOFFSET_LBL" description="MOD_NXYTB_OUTERSHADOWVOFFSET_DESC" hint="Value in Pixels" filter="integer"/>
+				<field name="outershadowblurradius" showon="enableoutershadow:1" type="text" default="4" label="MOD_NXYTB_OUTERSHADOWBLUR_LBL" description="MOD_NXYTB_OUTERSHADOWBLUR_DESC" hint="Value in Pixels" filter="integer"/>
+				<field name="outershadowspreadradius" showon="enableoutershadow:1" type="text" default="0" label="MOD_NXYTB_OUTERSHADOWSPREAD_LBL" description="MOD_NXYTB_OUTERSHADOWSPREAD_DESC" hint="Value in Pixels" filter="integer"/>
+<!-- #### Border Settings -->
+				<field type="spacer" showon="styletype:0" name="bordersettingsspacer" label="MOD_NXYTB_BORDERS_TIT" />
+				<field name="enableborders" showon="styletype:0" type="radio" default="0" label="MOD_NXYTB_ENABLEBORDERS_LBL" description="MOD_NXYTB_ENABLEBORDERS_DESC" class="btn-group btn-group-yesno">
+  					<option value="1">JYES</option>
+  					<option value="0">JNO</option>
+				</field>
+				<field name="enableadvancedborders" showon="styletype:0[AND]enableborders:1" type="radio" default="0" label="MOD_NXYTB_ENABLEADVBORDERS_LBL" description="MOD_NXYTB_ENABLEADVBORDERS_DESC" class="btn-group btn-group-yesno">
+  					<option value="1">JYES</option>
+  					<option value="0">JNO</option>
+				</field>
+				<field name="borderwidth" showon="styletype:0[AND]enableborders:1" type="text" label="MOD_NXYTB_BORDERSWIDTH_LBL" description="MOD_NXYTB_BORDERSWIDTH_DESC" default="" hint="4px 2px 3px 1px"/>
+				<field name="bordercolor" showon="styletype:0[AND]enableborders:1[AND]enableadvancedborders:0"  type="nxColor" format="rgba" default="rgba(100,100,100, 0.7)" label="MOD_NXYTB_BORDERDEFCOLOR_LBL" description="MOD_NXYTB_BORDERDEFCOLOR_DESC" />
+				<field name="bordercolortop" showon="styletype:0[AND]enableborders:1[AND]enableadvancedborders:1"  type="nxColor" format="rgba" default="rgba(0,0,0, 0.7)" label="MOD_NXYTB_BORDERTCOLOR_LBL" description="MOD_NXYTB_BORDERTCOLOR_DESC" />
+				<field name="bordercolorright" showon="styletype:0[AND]enableborders:1[AND]enableadvancedborders:1"  type="nxColor" format="rgba" default="rgba(0,0,0, 0.7)" label="MOD_NXYTB_BORDERRCOLOR_LBL" description="MOD_NXYTB_BORDERRCOLOR_DESC" />
+				<field name="bordercolorbottom" showon="styletype:0[AND]enableborders:1[AND]enableadvancedborders:1"  type="nxColor" format="rgba" default="rgba(0,0,0, 0.7)" label="MOD_NXYTB_BORDERBCOLOR_LBL" description="MOD_NXYTB_BORDERBCOLOR_DESC" />		
+				<field name="bordercolorleft" showon="styletype:0[AND]enableborders:1[AND]enableadvancedborders:1"  type="nxColor" format="rgba" default="rgba(0,0,0, 0.7)" label="MOD_NXYTB_BORDERLCOLOR_LBL" description="MOD_NXYTB_BORDERLCOLOR_DESC" />
+
+				
+<!-- #### Blocklayer Settings -->
+				<field type="spacer" name="blocklayerfields" label="MOD_NXYTB_BLOCKLAYERS_TIT" />
+				<field name="enableblocklayer" type="radio" default="0" label="MOD_NXYTB_BLENABLE_LBL" description="MOD_NXYTB_BLENABLE_DESC" class="btn-group btn-group-yesno">
+  					<option value="1">JYES</option>
+  					<option value="0">JNO</option>
+				</field>
+				
+				<field name="enableinsetshadow" showon="enableblocklayer:1" type="radio" default="0" label="MOD_NXYTB_BLINNERSHADOW_LBL" description="MOD_NXYTB_BLINNERSHADOW_DESC" class="btn-group btn-group-yesno">
+  					<option value="1">JYES</option>
+  					<option value="0">JNO</option>
+				</field>
+				<field type="spacer" name="insetshadowtitle" showon="enableblocklayer:1[AND]enableinsetshadow:1" label="MOD_NXYTB_BLINSETSHADOW_TIT" />
+				<field name="innershadowcolor" showon="enableblocklayer:1[AND]enableinsetshadow:1" type="nxColor" format="rgba" default="rgba(100,100,100, 0.7)" label="MOD_NXYTB_BLINNERSHADOWCOLOR_LBL" description="MOD_NXYTB_BLINNERSHADOWCOLOR_DESC" />
+				<field name="innershadowhoffset" showon="enableblocklayer:1[AND]enableinsetshadow:1" type="text" default="4" label="MOD_NXYTB_BLINNERSHADOWHOFFSET_LBL" description="MOD_NXYTB_BLINNERSHADOWHOFFSET_DESC" hint="Value in Pixels" filter="integer"/>
+				<field name="innershadowvoffset" showon="enableblocklayer:1[AND]enableinsetshadow:1" type="text" default="4" label="MOD_NXYTB_BLINNERSHADOWVOFFSET_LBL" description="MOD_NXYTB_BLINNERSHADOWVOFFSET_DESC" hint="Value in Pixels" filter="integer"/>
+				<field name="innershadowblurradius" showon="enableblocklayer:1[AND]enableinsetshadow:1" type="text" default="4" label="MOD_NXYTB_BLINNERSHADOWBLUR_LBL" description="MOD_NXYTB_BLINNERSHADOWBLUR_DESC" hint="Value in Pixels" filter="integer"/>
+				<field name="innershadowspreadradius" showon="enableblocklayer:1[AND]enableinsetshadow:1" type="text" default="0" label="MOD_NXYTB_BLINNERSHADOWSPREAD_LBL" description="MOD_NXYTB_BLINNERSHADOWSPREAD_DESC" hint="Value in Pixels" filter="integer"/>
+				
+				<field type="spacer" name="blocklayerthemetitle" label="MOD_NXYTB_BLTHEME_TIT" />
+				<field name="blocklayertype" type="list" showon="enableblocklayer:1" default="0" label="MOD_NXYTB_BLTYPE_LBL" description="MOD_NXYTB_BLTYPE_DESC">
+					<option value="0">MOD_NXYTB_BLTYPE_OPT_DEF</option><!--
+			  		<option value="1">MOD_NXYTB_BLTYPE_OPT_FIX</option>
+				  	<option value="2">MOD_NXYTB_BLTYPE_OPT_ANI</option>-->
+				</field>
+				
+				<field name="blocklayerbackgroundcolor" showon="enableblocklayer:1[AND]blocklayertype:0" type="nxColor" format="rgba" default="rgba(255,255,255, 0.0)" label="MOD_NXYTB_BLCOL_LBL" description="MOD_NXYTB_BLCOL_DESC" />
+				
+				
+				<!--
+				<field name="blocklayerstatictheme" showon="enableblocklayer:1[AND]blocklayertype:1" type="list" default="malp" label="MOD_NXYTB_BLSTATICTHEME_LBL" description="MOD_NXYTB_BLSTATICTHEME_DESC">
+					<option value="malp">MOD_NXYTB_BLTHEME_OPT_MALP</option>
+				  	<option value="hawaii">MOD_NXYTB_BLTHEME_OPT_HAWAII</option>
+				  	<option value="bull">MOD_NXYTB_BLTHEME_OPT_BULL</option>
+				</field>
+				<field name="blocklayeranimatedtheme" showon="enableblocklayer:1[AND]blocklayertype:2" type="list" default="none" label="MOD_NXYTB_BLANITHEME_LBL" description="MOD_NXYTB_BLANITHEME_DESC">
+					<option value="none">none</option>
+				</field>
+				<field name="blocklayerthemeopacity" type="nxVolume" showon="enableblocklayer:1[AND]blocklayertype:1,2" label="MOD_NXYTB_BLEFFECTOP_LBL" description="MOD_NXYTB_BLEFFECTOP_DESC" default="60" />
+				-->
+				
+			</fieldset>
+			<fieldset name="advanced">
+				<field name="debug" type="radio" default="0" label="MOD_NXYTB_DEBUG_LBL" description="MOD_NXYTB_DEBUG_DESC" class="btn-group btn-group-yesno">
+  					<option value="1">JYES</option>
+  					<option value="0">JNO</option>
+				</field>
+				<field name="moduleclass_sfx" type="textarea" label="MOD_NXYTB_MODULECLASS_SFX_LBL" description="MOD_NXYTB_MODULECLASS_SFX_DESC" rows="3" />
+			</fieldset>
+		</fields>
+	</config>
+	<updateservers>
+	    <server type="extension" name="nx-youtubeBox" priority="1">http://update.nx-designs.ch/updates/nx-youtubeBox_update.xml</server>
+	</updateservers>
+</extension>
+
+
+

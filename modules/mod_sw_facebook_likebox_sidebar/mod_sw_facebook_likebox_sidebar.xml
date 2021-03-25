@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+	<name>SW Facebook Likebox Sidebar</name>
+	<author>Muhammad Riduan</author>
+	<creationDate>August 2014</creationDate>
+	<copyright>Copyright (C)2014 Social Widgets</copyright>
+	<license>GNU General Public License version 2 or later</license>
+	<authorEmail>admin@socialwidgets.net</authorEmail>
+	<authorUrl>http://www.socialwidgets.net</authorUrl>
+	<version>1.0</version>
+	<description>
+	<![CDATA[
+		<style type="text/css">
+			span.readonly { padding: 10px; font-family: Arial; font-size:13px !important; font-weight: normal !important; text-align: justify; color: #4d4d4d; line-height: 24px; }
+			span.readonly h1 { clear:both; font-family: Georgia, sans-serif; font-size:38px; margin:30px 20px 23px; padding:0px 0px 24px 10px; color:#333; border-bottom: 1px solid #eee; font-weight: normal; }
+			span.readonly p { margin: 0 26px 10px }
+			span.readonly p a { color: #2F4C6D }
+			span.readonly p.homepage { margin-top: 30px }
+			span.readonly p.license { border-top: 1px solid #eee; font-size: 11px; margin: 30px 26px 0; padding: 6px 0; }
+		</style>	
+		<span class="readonly"><h1>SW Facebook Likebox Sidebar <small>ver. 1.0</small></h1><p>
+		<p>Thanks for installing SW Facebook Likebox Sidebar - This is a light version.</p>
+		<p><strong>To buy pro version - click here ->> <a href="#" target="_blank" title="Buy Now">Buy Now</a></strong></p>
+		<p class="license">SW Facebook Likebox Sidebar is released under the <a href="http://www.gnu.org/licenses/gpl-2.0.html" target="_blank">GNU/GPL v2 license.</a></p></span></span>
+	]]>
+	</description>
+	<files>
+		<folder>assets</folder>
+		<folder>tmpl</folder>
+		<filename module="mod_sw_facebook_likebox_sidebar">mod_sw_facebook_likebox_sidebar.php</filename>
+		<filename>index.html</filename>
+		<filename>mod_sw_facebook_likebox_sidebar.xml</filename>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field 
+					name="margintop"
+					type="text"
+					default="100"
+					label="Margin from Top" 
+					description="Margin from Top Right - Its in Absolute position of your window" />
+				<field
+					name="fb_id"
+					type="text"
+					default="http://www.facebook.com/facebook"
+					label="Facebook Page URL"
+					description="Absolute URL of your Facebook Fan Page" />
+				<field
+					name="stream"
+					class="btn-group"
+					type="radio"
+					default="true"
+					label="Display Streams"
+					description="By Default its set to No. To Display Streams select Yes - Make sure you have increased the height of the likebox too.">
+					<option value="true">Yes</option>
+					<option value="false">No</option>
+				</field>
+				<field 
+					name="fbwidth"
+					type="text"
+					default="290"
+					label="Width" 
+					description="Width of your module in px" />
+				<field 
+					name="fbheight"
+					type="text"
+					default="350"
+					label="Height"
+					description="Height of your module in px" />
+				<field
+					name="loadjquery"
+					class="btn-group"
+					type="radio"
+					default="0"
+					label="Load jQuery"
+					description="By default it's disable - if your site not loading jQuery you can enable it">
+					<option value="0">Disable</option>
+					<option value="1">Enable</option>
+				</field>
+			</fieldset>
+			<fieldset name="advanced">
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					default=""
+					label="Module Suffix"
+					description="Module Class Suffix here" />				
+			</fieldset>
+		</fields>
+	</config>
+</extension>

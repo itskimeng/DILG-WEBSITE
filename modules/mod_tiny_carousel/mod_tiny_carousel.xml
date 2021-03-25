@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1.0" client="site" method="upgrade">
+	<name>Tiny Carousel</name>
+	<author>Gopi Ramasamy</author>
+	<creationDate>June 2014</creationDate>
+	<copyright>(C) 2010 - 2014 www.gopiplus.com, LLC. All rights reserved.</copyright>
+	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+	<authorEmail>gopiplus@gmail.com</authorEmail>
+	<authorUrl>http://www.gopiplus.com/extensions/2014/06/tiny-carousel-slider-joomla-module/</authorUrl>
+	<version>3.3</version>
+	<description>TINYCCAR_DESC</description>
+	<languages>
+		<language tag="en-GB">language/en-GB.mod_tiny_carousel.ini</language>
+		<language tag="en-GB">language/en-GB.mod_tiny_carousel.sys.ini</language>
+	</languages>
+	<files>
+		<filename module="mod_tiny_carousel">mod_tiny_carousel.php</filename>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>		
+		<filename>mod_tiny_carousel.xml</filename>
+		<folder>tmpl</folder>
+		<folder>images</folder>
+		<folder>js</folder>
+		<folder>language</folder>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field 
+					name="tinyc_jquery" 
+					type="list" 
+					default="NO" 
+					label="TINYCCAR_ADD_JQUERY" 
+					description="TINYCCAR_ADD_JQUERY_DESC">
+					<option value="YES">TINYCCAR_YES</option> 
+					<option value="NO">TINYCCAR_NO</option> 
+				</field>
+				<field
+					name="tinyc_type"
+					type="text"
+					default="jpg, png, gif, jpeg"
+					size="10"
+					label="TINYCCAR_IMAGE_TYPE"
+					description="TINYCCAR_IMAGE_TYPE_DESC" />
+				<field
+					name="tinyc_folder"
+					size="50"
+					type="text"
+					default="modules/mod_tiny_carousel/images"
+					label="TINYCCAR_IMAGE_FOLDER"
+					description="TINYCCAR_IMAGE_FOLDER_DESC" />
+				<field
+					name="tinyc_width"
+					type="text"
+					size="10"
+					default="100"
+					label="TINYCCAR_WIDTH"
+					description="TINYCCAR_WIDTH_DESC" />
+				<field
+					name="tinyc_height"
+					type="text"
+					size="10"
+					default="75"
+					label="TINYCCAR_HEIGHT"
+					description="TINYCCAR_HEIGHT_DESC" />
+				<field name="tinyc_autointerval" type="list" default="true" label="TINYCCAR_AUTOINTERVAL" description="TINYCCAR_AUTOINTERVAL_DESC">
+					<option value="true">TINYCCAR_TRUE</option>
+					<option value="false">TINYCCAR_FALSE</option>
+				</field>
+				<field
+					name="tinyc_intervaltime"
+					type="text"
+					size="10"
+					default="1500"
+					label="TINYCCAR_INTERVALTIME"
+					description="TINYCCAR_INTERVALTIME_DESC" />	
+				<field
+					name="tinyc_animation"
+					type="text"
+					size="10"
+					default="1000"
+					label="TINYCCAR_ANIMATION"
+					description="TINYCCAR_ANIMATION_DESC" />
+				<field name="tinyc_random" type="list" default="NO" label="TINYCCAR_RANDOM" description="TINYCCAR_AUTOINTERVAL_DESC">
+					<option value="YES">TINYCCAR_YES</option>
+					<option value="NO">TINYCCAR_NO</option>
+				</field>
+				<field
+					name="tinyc_arrowcolor"
+					type="text"
+					size="10"
+					default="#C01313"
+					label="TINYCCAR_ARROWCOLOR"
+					description="TINYCCAR_ARROWCOLOR_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

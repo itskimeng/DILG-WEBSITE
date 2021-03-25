@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+	<name>Logo Showcase Module</name>
+	<author>joomla2you</author>
+	<creationDate>Oct 20, 2018</creationDate>
+	<copyright>Copyright (C) http://www.joomla2you.com. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>support@joomla2you.com</authorEmail>
+	<authorUrl>www.joomla2you.com</authorUrl>
+	<version>4.0.0</version>
+	<description>	
+	<![CDATA[<link href="../modules/mod_ju_logoshowcase/assets/css/admin.css" rel="stylesheet" type="text/css" media="all" />
+	<h1>Logo Showcase module</h1>
+	<div style="margin:0 0 0 10px; font-size:15px;">Logo Showcase Module from <a href="http://www.joomla2you.com" target="_blank">joomla2you.com</a></div>
+	<h3>Userful links</h3>
+	<ul><li><a target='_blank' href='https://www.joomla2you.com/joomla-templates'>Joomla templates</a></li>
+	<li><a target='_blank' href='https://www.joomla2you.com/extensions'>Joomla extensions</a></li>
+	<li><a target='_blank' href='https://www.joomla2you.com/contact'>Report bug</a></li></ul>
+		]]></description>
+
+	<files>
+		<filename module="mod_ju_logoshowcase">mod_ju_logoshowcase.php</filename>
+		<filename>index.html</filename>
+		<filename>mod_ju_logoshowcase.xml</filename>
+		<folder>assets</folder>
+		<folder>field</folder>
+		<folder>tmpl</folder>
+	</files>
+   <updateservers>
+      <server type="extension" priority="1" name="Logo Showcase">https://www.joomla2you.com/updates/mod_ju_logoshowcase.xml</server>
+   </updateservers>
+	<config>
+		<fields name="params">
+			<fieldset name="logo" label="Logos">
+				<field name="logo_items" type="subform" formsource="modules/mod_ju_logoshowcase/field/image.xml" class="advancedSelect" min="1" max="50" multiple="true" layout="joomla.form.field.subform.repeatable" groupByFieldset="true" label="Logo(s)" description="Add logos(s) to display in gallery" />
+			</fieldset>
+			
+			<fieldset name="settings" label="General Settings">	
+				<field name="image_width" type="list" default="4" label="Items" description="Number of items displayed">
+					<option value="1">1 Item</option>
+					<option value="2">2 Items</option>
+					<option value="3">3 Items</option>
+					<option value="4">4 Items</option>
+					<option value="5">5 Items</option>
+					<option value="6">6 Items</option>
+					<option value="7">7 Items</option>
+					<option value="8">8 Items</option>
+					<option value="9">9 Items</option>
+					<option value="10">10 Items</option>
+				</field>
+				<field name="image_width_tabl" type="list" default="3" label="Items (Tab Landscape)" description="Items (Tab Landscape)">
+					<option value="1">1 Item</option>
+					<option value="2">2 Items</option>
+					<option value="3">3 Items</option>
+					<option value="4">4 Items</option>
+					<option value="5">5 Items</option>
+					<option value="6">6 Items</option>
+					<option value="7">7 Items</option>
+					<option value="8">8 Items</option>
+					<option value="9">9 Items</option>
+					<option value="10">10 Items</option>
+				</field>
+				<field name="image_width_tabp" type="list" default="3" label="Items (Tab Portrait)" description="Items (Tab Portrait)">
+					<option value="1">1 Item</option>
+					<option value="2">2 Items</option>
+					<option value="3">3 Items</option>
+					<option value="4">4 Items</option>
+					<option value="5">5 Items</option>
+					<option value="6">6 Items</option>
+					<option value="7">7 Items</option>
+					<option value="8">8 Items</option>
+					<option value="9">9 Items</option>
+					<option value="10">10 Items</option>
+				</field>
+				<field name="image_width_mobl" type="list" default="2" label="Items (Mob Landscape)" description="Items (Mob Landscape)">
+					<option value="1">1 Item</option>
+					<option value="2">2 Items</option>
+					<option value="3">3 Items</option>
+					<option value="4">4 Items</option>
+					<option value="5">5 Items</option>
+					<option value="6">6 Items</option>
+					<option value="7">7 Items</option>
+					<option value="8">8 Items</option>
+					<option value="9">9 Items</option>
+					<option value="10">10 Items</option>
+				</field>
+				<field name="image_width_mobp" type="list" default="1" label="Items (Mob Portrait)" description="Items (Mob Portrait)">
+					<option value="1">1 Item</option>
+					<option value="2">2 Items</option>
+					<option value="3">3 Items</option>
+					<option value="4">4 Items</option>
+					<option value="5">5 Items</option>
+					<option value="6">6 Items</option>
+					<option value="7">7 Items</option>
+					<option value="8">8 Items</option>
+					<option value="9">9 Items</option>
+					<option value="10">10 Items</option>
+				</field>		
+				<field name="jpreload" type="list" default="0" label="Preload" description="Show preload">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="autoplay" type="list" default="true" label="Auto play" description="Auto play">
+					<option value="true">Yes</option>
+					<option value="false">No</option>
+				</field>
+				<field name="autoplay-timeout" type="list" default="5000" label="Sliding Time" description="Sliding Time">
+					<option value="1000">1 sec</option>
+					<option value="2000">2 sec</option>
+					<option value="3000">3 sec</option>
+					<option value="4000">4 sec</option>
+					<option value="5000">5 sec</option>
+					<option value="6000">6 sec</option>
+					<option value="7000">7 sec</option>
+					<option value="8000">8 sec</option>
+					<option value="9000">9 sec</option>
+					<option value="10000">10 sec</option>
+					<option value="15000">15 sec</option>
+					<option value="20000">20 sec</option>
+				</field>
+				<field name="autoplay-speed" type="list" default="1000" label="Sliding speed" description="Sliding speed">
+					<option value="500">0.5 sec</option>
+					<option value="600">0.6 sec</option>
+					<option value="700">0.7 sec</option>
+					<option value="800">0.8 sec</option>
+					<option value="900">0.9 sec</option>
+					<option value="1000">1 sec</option>
+					<option value="2000">2 sec</option>
+					<option value="3000">3 sec</option>
+				</field>
+				<field name="autoplay-hover-pause" type="list" default="true" label="Auto play hover pause" description="Auto play hover pause">
+					<option value="true">Yes</option>
+					<option value="false">No</option>
+				</field>
+				<field name="dataLoop" type="list" default="true" label="Loop" description="Loop">
+					<option value="true">Yes</option>
+					<option value="false">No</option>
+				</field>
+				<field name="dataNav" type="list" default="true" label="Navigation" description="Show Navigation">
+					<option value="true">Yes</option>
+					<option value="false">No</option>
+				</field>
+				<field name="navPosit" type="list" default="" label="Navigation position" description="Next prev buttom position">
+					<option value="nav-bottom-right">Bottom right</option>
+					<option value="nav-outside-top">Top right</option>
+					<option value="owl-nav">Center</option>
+				</field>
+				<field name="navStyle" type="list" default="" label="Navigation Style" description="Navigation Style">
+					<option value="nav-light">Light</option>
+					<option value="">Dark</option>
+				</field>
+				<field name="navRounded" type="list" default="" label="Nav Buttons Rounded" description="Navigation Buttons Rounded">
+					<option value="nav-rounded">Yes</option>
+					<option value="">No</option>
+				</field>
+				<field name="ju_target" type="radio" default="_self" label="Open link in new widow" description="Open your link to a new browser widow" checked="checked" class="btn-group">
+					<option value="_self">No</option>
+					<option value="_blank">Yes</option>
+				</field>			
+				<field name="container_fix" type="text" default="0" label="Item disatance" description="Disatance betwin each team members." />
+			</fieldset>
+			
+			<fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static">
+					<option
+						value="static"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

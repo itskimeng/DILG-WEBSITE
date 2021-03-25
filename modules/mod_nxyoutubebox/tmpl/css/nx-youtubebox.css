@@ -1,0 +1,68 @@
+/*
+
+    Stylesheet for a proper visualisation
+
+*/
+
+div.moduletable {
+	width:100%;		// Bugfix for Joomla 4 Alpha
+}
+
+div.nx-youtubebox {
+	position: 		relative;
+}
+div.nx-outer {
+	position: 		relative;
+}
+
+.nx-videobox-container {
+    position:           relative;
+    width:              100%;
+    min-height:         50px;
+    height:             auto;
+    margin:             0;
+    padding:            0;
+    background:         none;
+}
+
+.nx-YouTubeBox {
+	position: 		relative;
+	padding-bottom: 56.23%;
+	height: 		0;
+	overflow: 		hidden;
+	max-width: 		100%;
+	background:		transparent;
+	margin-top: 	0;
+}
+.nx-YouTubeBox iframe {
+	position: 		absolute;
+	top: 			0;
+	left: 			0;
+	width: 			100%;
+	height: 		100%;
+	z-index: 		100;
+	background: 	transparent;
+}
+
+
+
+.nx-blocklayer{
+    /* See blocklayersettings.css.php */
+}
+
+@media (max-width: 991px) and (min-width:319px){ 
+    /* Extra Small & Small devices (smartphones,tablets, 356px and up) */
+    .nx-blocklayer{
+        display:        none !important;
+    }
+}
+@media (max-width: 1199px) and (min-width:992px){ 
+    /* Medium devices (desktops, 992px and up) */
+    .nx-blocklayer{
+    }
+}
+@media (min-width:1200px){ 
+    /* Large devices (large desktops, 1200px and up) */
+    .nx-blocklayer{
+    }
+}

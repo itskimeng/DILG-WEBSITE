@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5.0" client="site" method="upgrade">
+	<name>Easy Image Rotator Module</name>
+	<author>Daniel Blum</author>
+	<creationDate>22/07/2017</creationDate>
+	<copyright>Copyright (C) 2010-2017 Daniel Blum. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-3.0.html</license>
+	<authorEmail>info@codeninja.eu</authorEmail>
+	<authorUrl>http://codeninja.eu</authorUrl>
+	<version>2.0.6</version>
+	<description>MOD_EASYIMAGEROTATOR_XML_DESCRIPTION</description>
+	<downloadUrl>https://codeninja.eu/joomla-extensions/easy-image-rotator</downloadUrl>
+	<files>
+		<filename module="mod_easyimagerotator">mod_easyimagerotator.php</filename>
+		<folder>css</folder>
+		<folder>js</folder>
+		<filename>mod_easyimagerotator.xml</filename>
+		<filename>index.html</filename>
+		<filename>helper.php</filename>
+	</files>
+	
+	<languages folder="language">
+		<language tag="en-GB">en-GB.mod_easyimagerotator.ini</language>
+		<language tag="en-GB">en-GB.mod_easyimagerotator.sys.ini</language>
+		<language tag="de-DE">de-DE.mod_easyimagerotator.ini</language>
+		<language tag="de-DE">de-DE.mod_easyimagerotator.sys.ini</language>
+	</languages>
+	
+	<config>
+		<fields name="params">
+			<fieldset name="basic" label="MOD_EASYIMAGEROTATOR_FIELDSET_BASIC">
+				
+				<field name="useFallbackImages" type="radio" default="1" class="btn-group" label="MOD_EASYIMAGEROTATOR_USE_FALLBACK_LABEL" description="MOD_EASYIMAGEROTATOR_USE_FALLBACK_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="fitting" type="list" default="0"  label="MOD_EASYIMAGEROTATOR_FITTING_LABEL" description="MOD_EASYIMAGEROTATOR_FITTING_DESC">
+					<option value="0">MOD_EASYIMAGEROTATOR_FITTING_STRETCH</option>
+					<option value="1">MOD_EASYIMAGEROTATOR_FITTING_SCALEDOWN</option>
+					<option value="2">MOD_EASYIMAGEROTATOR_FITTING_SCALEUP</option>
+				</field>
+				
+				<!-- image handling -->
+				<field name="isResponsive" type="radio" default="1" class="btn-group" label="MOD_EASYIMAGEROTATOR_ISRESPONSIVE_LABEL" description="MOD_EASYIMAGEROTATOR_ISRESPONSIVE_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				
+				<field name="width" type="text" required="true" default="250" label="MOD_EASYIMAGEROTATOR_WIDTH_LABEL" description="MOD_EASYIMAGEROTATOR_WIDTH_DESC" />
+				<field name="height" type="text" required="true" default="80" label="MOD_EASYIMAGEROTATOR_HEIGHT_LABEL" description="MOD_EASYIMAGEROTATOR_HEIGHT_DESC" />
+				
+				<field name="shuffleImages" type="radio" default="0" class="btn-group" label="MOD_EASYIMAGEROTATOR_SHUFFLEIMAGES_LABEL" description="MOD_EASYIMAGEROTATOR_SHUFFLEIMAGES_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+			</fieldset>
+			
+			<fieldset name="SpecificImagePath" label="MOD_EASYIMAGEROTATOR_FIELDSET_OVERWRITEMAGEPATH">
+				<field name="useSpecificImagePath" type="radio" default="0" class="btn-group" label="MOD_EASYIMAGEROTATOR_USESPECIFICIMAGEPATH_LABEL" description="MOD_EASYIMAGEROTATOR_USESPECIFICIMAGEPATH_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+				<field name="specificImagePath" type="text" default="/images" label="MOD_EASYIMAGEROTATOR_SPECIFICIMAGEPATH_LABEL" description="MOD_EASYIMAGEROTATOR_SPECIFICIMAGEPATH_DESC" />
+			</fieldset>
+			
+			<fieldset name="slider" label="MOD_EASYIMAGEROTATOR_FIELDSET_SLIDER">
+				<field name="displayAsImageSlider" type="radio" default="1" class="btn-group" label="MOD_EASYIMAGEROTATOR_DISPLAY_AS_JS_SLIDER_LABEL" description="MOD_EASYIMAGEROTATOR_DISPLAY_AS_JS_SLIDER_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="sliderCropImages" type="radio" default="0" class="btn-group" label="MOD_EASYIMAGEROTATOR_SLIDERCROPIMAGES_LABEL" description="MOD_EASYIMAGEROTATOR_SLIDERCROPIMAGES_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="sliderPauseTime" type="text" required="true" default="3000" label="MOD_EASYIMAGEROTATOR_SLIDERPAUSETIME_LABEL" description="MOD_EASYIMAGEROTATOR_SLIDERPAUSETIME_DESC" />
+				<field name="sliderEffect" type="list" default="0"  label="MOD_EASYIMAGEROTATOR_SLIDEREFFECT_LABEL" description="MOD_EASYIMAGEROTATOR_SLIDEREFFECT_DESC">
+					<option value="0">MOD_EASYIMAGEROTATOR_SLIDEREFFECT_TYP_RANDOM</option>
+					<option value="1">MOD_EASYIMAGEROTATOR_SLIDEREFFECT_TYP_FOLD</option>
+					<option value="2">MOD_EASYIMAGEROTATOR_SLIDEREFFECT_TYP_FADE</option>
+					<option value="3">MOD_EASYIMAGEROTATOR_SLIDEREFFECT_TYP_SLICEDOWN</option>
+				</field>
+				<field name="sliderAnimationSpeed" type="text" required="true" default="500" label="MOD_EASYIMAGEROTATOR_ANIMATIONSPEED_LABEL" description="MOD_EASYIMAGEROTATOR_ANIMATIONSPEED_DESC" />
+				<field name="numberOfImagesToLoad" type="integer" required="true" default="8" first="1" last="100" step="1" label="MOD_EASYIMAGEROTATOR_NUMBER_OF_IMAGES_LABEL" description="MOD_EASYIMAGEROTATOR_NUMBER_OF_IMAGES_DESC" />
+				<field name="displayImageTitle" type="radio" default="1" class="btn-group" label="MOD_EASYIMAGEROTATOR_DISPLAY_IMAGE_TITLE_LABEL" description="MOD_EASYIMAGEROTATOR_DISPLAY_IMAGE_TITLE_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="displayHtmlCaption" type="radio" default="1" class="btn-group" label="MOD_EASYIMAGEROTATOR_DISPLAYHTMLCAPTION_LABEL" description="MOD_EASYIMAGEROTATOR_DISPLAYHTMLCAPTION_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

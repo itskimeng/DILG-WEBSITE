@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="2.5.0" method="upgrade">	
+	<name>Easy Image Rotator</name>
+	<author>Daniel Blum</author>
+	<creationDate>22/07/2017</creationDate>
+	<copyright>Copyright (C) 2010-2017 Daniel Blum. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-3.0.html</license>
+	<authorEmail>info@codeninja.eu</authorEmail>
+	<authorUrl>http://codeninja.eu</authorUrl>
+	<version>2.0.6</version>
+	<description>COM_EASYIMAGEROTATOR_XML_DESCRIPTION</description>
+	<downloadUrl>https://codeninja.eu/joomla-extensions/easy-image-rotator</downloadUrl>
+	<install>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install.sql</file>
+		</sql>
+	</install>
+	
+	<uninstall>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/uninstall.sql</file>
+		</sql>
+	</uninstall>
+	
+	<administration>
+		<menu img="components/com_easyimagerotator/menuicon.png">COM_EASYIMAGEROTATOR</menu>
+		<files folder="admin">
+			<filename>index.html</filename>
+			<filename>access.xml</filename>
+			<filename>config.xml</filename>
+			<filename>easyimagerotator.php</filename>
+			<filename>controller.php</filename>
+			<filename>menuicon.png</filename>
+			<folder>assets</folder>
+			<folder>helpers</folder>
+			<folder>models</folder>
+			<folder>sql</folder>
+			<folder>tables</folder>
+			<folder>views</folder>
+		</files>
+		
+		<languages folder="admin">
+			<language tag="en-GB">language/en-GB/en-GB.com_easyimagerotator.ini</language>
+			<language tag="en-GB">language/en-GB/en-GB.com_easyimagerotator.sys.ini</language>
+			<language tag="de-DE">language/de-DE/de-DE.com_easyimagerotator.ini</language>
+			<language tag="de-DE">language/de-DE/de-DE.com_easyimagerotator.sys.ini</language>
+		</languages>
+	</administration>
+</extension>

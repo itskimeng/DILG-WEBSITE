@@ -1,0 +1,14 @@
+/**
+ * Small Responsive class
+ */
+.jhm-slideshow-container .jhm-wrapper.jhm-responsive-mobile-small .jhm-caption .jhm-caption-text{
+    /* do small style here */
+}
+
+
+/**
+ * Medium Responsive class
+ */
+.jhm-slideshow-container .jhm-wrapper.jhm-responsive-mobile-medium{
+    /* do medium style here */
+}
