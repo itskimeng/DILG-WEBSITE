@@ -5,7 +5,7 @@
  * @copyright  Copyright (C) 2005 - 2020 Open Source Matters, Inc. All rights reserved.
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
-
+// test commit
 /**
  * Define the application's minimum supported PHP version as a constant so it can be referenced within the application.
  */
